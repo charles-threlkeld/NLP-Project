@@ -9,4 +9,9 @@ lazy val root = (project in file(".")).
     )),
     name := "Hello",
     libraryDependencies += scalaTest % Test
+      libraryDependencies ++= Seq("org.scalanlp" %% "breeze" % "0.13.2",
+        "org.scalanlp" %% "breeze-natives" % "0.13.2",
+        "org.scalanlp" %% "breeze-viz" % "0.13.2"
+      )
+      resolvers += "Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
   )
