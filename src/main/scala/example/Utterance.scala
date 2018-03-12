@@ -26,8 +26,6 @@ class Repair(chunks: Chunk) {
 }
 
 object Repair extends Utterance with App {
-
-
   // Sources for training and testing datasets
   // http://www.iesl.cs.umass.edu/datasets.html
   // https://machinelearningmastery.com/datasets-natural-language-processing/
