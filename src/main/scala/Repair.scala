@@ -1,6 +1,6 @@
 import nltk._
 
-object Repair {
+class Repair(filename: String) {
   // Sources for training and testing datasets
   // http://www.iesl.cs.umass.edu/datasets.html
   // https://machinelearningmastery.com/datasets-natural-language-processing/
@@ -17,12 +17,12 @@ object Repair {
     List("a","b","c")
   }
 
-  val utterances: List[String] = List("Hello", ",", "World", "!")
-
-  val sen = new Sentenceizer(utterances)
+  import scala.io.Source
+  val str = Source.fromResource(filename).getLines.toList
+  val sen = new Sentenceizer(str)
   val tok = new Tokenizer(sen)
   val pos = new POSTagger(tok)
   val rep = repair(tok, pos)
-  println(utterances)
+  println(filename)
 
 }
