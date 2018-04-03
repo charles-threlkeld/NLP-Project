@@ -1,5 +1,5 @@
 package nltk
 
-class Sentenceizer(rawText: List[String]) {
-  val sentences = rawText
+class Sentenceizer(rawText: String) {
+  val sentences = List(rawText)
 }

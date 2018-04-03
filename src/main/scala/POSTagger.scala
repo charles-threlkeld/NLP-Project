@@ -93,37 +93,18 @@ class POSTagger(toks: Tokenizer) {
 
       val distinct_prevs = prev_tags.distinct
 
-      for (i <- 0 until distinct_prevs.size) yield {
-        tag_pairs filter (_._2 == distinct_prevs(i))
-      }
+      val this_tag_matches = (for (i <- 0 until distinct_prevs.size) yield {
+        val tag_matches = tag_pairs filter (_._2 == distinct_prevs(i))
+        tag_matches.groupBy(identity).maxBy(_._2.size)._1._2
+      }).toList
 
+      val tag_map: Map[String, String] = (distinct_prevs zip this_tag_matches).toMap
 
+      // Get the most common tag to use as a default
+      val most_common_tag: String = distinct_tags.groupBy(identity).maxBy(_._2.size)._1
 
-      val most_common_tag = distinct_tags.groupBy(identity).maxBy(_._2.size)._1
-
-      if(distinct_tags.forall(x => x == distinct_tags(0))) {
-        // If a word only has one tag
-        Map("DEFAULT" -> distinct_tags(0))
-      } else {
-        // get the previous word's tag
-        // send back a map of the most common prev-tag to this-tag pairs
-        // TODO Handle beginning of a sentence
-
-        val (_, indices) = tagged_words.zipWithIndex
-          .filter(_._1._1 == distinct_word)
-          .unzip
-        val prev_indices = indices map (_ - 1)
-
-        val prev_tags = prev_indices map (tagged_words(_)._2)
-
-        val tag_pair = prev_tags zip distinct_tags
-
-        val x = distinct_tags.groupBy(identity).maxBy(_._2.size)._1
-
-        Map("VERB" -> x,
-          "NOUN" -> x,
-          "OTHER" -> x)
-      }
+      val default_pair: (String, String) = ("Default", most_common_tag)
+      tag_map + default_pair
     }
 
     val (words, tags) = reformat_file(filename)
@@ -133,13 +114,15 @@ class POSTagger(toks: Tokenizer) {
   }
 
   def test(filename: String): Unit = {
-    val model = train("train.txt")
-
     val (words, tags) = reformat_file("test.txt")
+    
+    println("Hello, world!")
 
   }
 
-  val tag_map = train("train-pos.txt")
+  type Model = Map[String, Map[String,String]]
+
+  val tag_map: Model = train("train-pos.txt")
 
   val s = toks.tokens
 

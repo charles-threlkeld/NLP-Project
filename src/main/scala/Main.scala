@@ -15,5 +15,10 @@ object Main extends App {
   // List("I", "would", "like", "a", "red", "coat")
   // String: "I would like a red coat"
 
+  val input_file = "test-rep.txt"
+  val senten = new nltk.Sentenceizer(input_file)
+  val tokens = new nltk.Tokenizer(senten)
+  val tagger = new nltk.POSTagger(tokens)
+  tagger.test("test.txt")
   println("Hello World!")
 }

@@ -19,7 +19,7 @@ class Repair(filename: String) {
 
   import scala.io.Source
   val str = Source.fromResource(filename).getLines.toList
-  val sen = new Sentenceizer(str)
+  val sen = new Sentenceizer("Hello, World!")
   val tok = new Tokenizer(sen)
   val pos = new POSTagger(tok)
   val rep = repair(tok, pos)
