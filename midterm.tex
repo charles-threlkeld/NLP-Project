@@ -1,0 +1,34 @@
+\documentclass{article}
+
+\title{Computational First Position Repair Processing}
+\author{Charles Threlkeld and Alexandru Ungureanu}
+\date{3 April 2018}
+\begin{document}
+\maketitle
+
+\section{Problem Statement}
+In natual dialog, people often correct themselves mid-statement. For example, if I say ``I'm going to the library, no Halligan,'' a person will understand that I am going to Halligan. However, machines will often fail to process this utterance correctly. ``I'm going to the library,'' is a full sentence, and the computer may recognize it as such, disregarding the repair. Alternatively, the machine may simply fail to parse the utterance and ask for a repetition. For a more exhaustive survey of the current research on linguistic repair, see Albert and de Ruiter\footnote{Repair: the interface between interaction and cognition. Albert and de Ruiter 2018}. Our algorithm aims to clarify the semantic meaning of substitution self-repair. It will dispose of any super-semantic meaning of the processed disfluencies.
+
+\section{Approach}
+
+Our working hypothesis is that substitution phrases take the same part-of-speech structure as the phrases they are intended to substitute. So, in the example above, ``library'' is substituted with ``Halligan,'' both of which are nouns. In this case, a naive implementation of our algorithm fails on strict syntactic substitution, but will succeed on a semantic level. That is, ``I'm going to the Halligan'' is not grammatically correct, but when semantically represented in a robotic architecture (or other semantic processing), the semantics are sufficiently correct.
+
+So, our approach is to use a part-of-speech tagger on a sentence (or utterance) level. Then, we will flag words or phrases that signal self-repair (``I mean'', ``actually'', ``uh''). Some of these words may also be used to hold the turn in dialog, rather than for repair, so our algorithm assumes that a repair is being made. If none of the signal words are found, it will try to find similar part-of-speech structure for two parts of the sentence and discard the middle part of the utterance.
+
+\section{Evaluation}
+
+
+
+\section{Materials}
+\subsection{Data List}
+We anticipate needing at least a few hundred sentences of dialog that has been recognized as exhibiting first-person repair. The larger our corpus, the more general we can make our algorithm, but since this type of repair happens almost exclusively in spoken dialog, and not prepared speech or written text, we will have to find a corpus of transcribed natural dialog.
+
+We have found the Cooperative Remove Search Task (CReST) corpus that was put together by Kathleen Eberhard et al. in 2010. It codes for disfluencies and should serve our needs. It has already been tagged for part-of-speech, so we can use it for both training and testing of our algorithm. Though the current implementation is deterministic and the scope does not include identification of repair, if more work can be done, then it may be possible to do a more standard train and test. Details can be found in Eberhard 2010\footnote{Eberhard et al. The Indiana ``Cooperative Remote Search Task'' (CReST) Corpus 20017}
+
+\subsection{Code Libraries}
+
+
+
+\subsection{Additional Material}
+
+\section{Results}
