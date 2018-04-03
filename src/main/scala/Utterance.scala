@@ -25,7 +25,7 @@ class Repair(chunks: Chunk) {
   val repair = chunks.chunk
 }
 
-object Repair extends Utterance with App {
+object Repair extends Utterance {
   // Sources for training and testing datasets
   // http://www.iesl.cs.umass.edu/datasets.html
   // https://machinelearningmastery.com/datasets-natural-language-processing/
