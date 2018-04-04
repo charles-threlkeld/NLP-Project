@@ -19,6 +19,6 @@ object Main extends App {
   val senten = new nltk.Sentenceizer(input_file)
   val tokens = new nltk.Tokenizer(senten)
   val tagger = new nltk.POSTagger(tokens)
-  tagger.test("test.txt")
+  tagger.test("test-pos.txt")
   println("Hello World!")
 }
