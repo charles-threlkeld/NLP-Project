@@ -47,10 +47,9 @@ We anticipate needing at least a few hundred sentences of dialog that has been r
 
 \begin{flushleft}
 
-We have found the Cooperative Remove Search Task (CReST) corpus that was put together by Kathleen Eberhard et al. in 2010. It codes for disfluencies and should serve our needs. It has already been tagged for part-of-speech, so we can use it for both training and testing of our algorithm. Though the current implementation is deterministic and the scope does not include identification of repair, if more work can be done, then it may be possible to do a more standard train and test. Details can be found in Eberhard 2010\footnote{Eberhard et al. The Indiana ``Cooperative Remote Search Task'' (CReST) Corpus 20017}
+  We have found the Cooperative Remove Search Task (CReST) corpus that was put together by Kathleen Eberhard et al. in 2010. It codes for disfluencies and should serve our needs. It has already been tagged for part-of-speech, so we can use it for both training and testing of our algorithm. Though the current implementation is deterministic and the scope does not include identification of repair, if more work can be done, then it may be possible to do a more standard train and test. Details can be found in Eberhard 2010\footnote{Eberhard et al. The Indiana ``Cooperative Remote Search Task'' (CReST) Corpus 20017}. We have added the CReST corpus to our resource files, but we haven't set up a parser to extract the dialog from the xml files yet.
 
 \end{flushleft}
-
 
 \subsection{Code Libraries}
 
@@ -72,7 +71,9 @@ At this point, we designed and identified the different components of our projec
 
 \begin {flushleft}
 
- In addition to setting up the scala project and the source file for each component, we implemented a naive training for the POS Tagging component of our project and created the skeleton of the POSTagger class, which will take a list of tokens, and, based on the training phase learning, assign the "appropriate" part of speech tag to each token. Also, we wrote a simplifier that maps Penn tags to the more general tags {Adjective, Adverb, Conjunction, Determiner, Noun, Number, Preposition, Verb, Beginning}.
+ In addition to setting up the scala project and the source file for each component, we implemented a naive training for the POS Tagging component of our project and created a naive implementation of the POSTagger class, which will take a list of tokens, and, based on the training phase learning, assign the "appropriate" part of speech tag to each token. Also, we wrote a simplifier that maps Penn tags to the more general tags {Adjective, Adverb, Conjunction, Determiner, Noun, Number, Preposition, Verb, Beginning}.
+
+ Currently, the tagger works at about 95\% accuracy according to the testing data. It currently operates on the corpus from assignment 6, so results may be somewhat smaller when operating on the distinct CReST corpus.
  
  \end{flushleft}
 
