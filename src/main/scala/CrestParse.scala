@@ -42,10 +42,13 @@ class CrestParse(filename: String) {
     return (t1, t2, text)
   }
 
+
+
   val filename = "Muri_07_S3_merged.xml"
   val lines = get_file(filename)
   val processed_lines = lines map process_xml_lines
-
+  // TODO: Match words to POS tags
+  // Match word-tag tuples to utterances
 
 
 }
