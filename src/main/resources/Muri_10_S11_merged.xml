@@ -2031,7 +2031,8 @@
 <tli id="T1001" time="563.9147852616893"/>
 <tli id="T233" time="563.9372335600907"/>
 </common-timeline>
-<tier id="TIE0" speaker="Director" category="v" type="t" display-name="Director [v]"><event start="T0" end="T1">[setup]</event>
+<tier d="TIE0" speaker="Director" category="v" type="t" display-name="Director [v]">
+  <event start="T0" end="T1">[setup]</event>
 <event start="T1" end="T2">[pause]</event>
 <event start="T2" end="T3">alright</event>
 <event start="T3" end="T4">[pause]</event>
@@ -2217,7 +2218,8 @@
 <event start="T228" end="T229">now they s- they're telling me that we're done</event>
 <event start="T229" end="T230">{laugh}</event>
 <event start="T231" end="T232">yeah</event>
-</tier><tier id="TIE1" speaker="DirectorS11WORD" category="v" type="t" display-name="DirectorS11WORD"><event start="T2" end="T3">alright</event>
+</tier><tier d="TIE1" speaker="DirectorS11WORD" category="v" type="t" display-name="DirectorS11WORD">
+<event start="T2" end="T3">alright</event>
 <event start="T4" end="T5">so</event>
 <event start="T6" end="T7">um</event>
 <event start="T7" end="T234">I</event>
@@ -2804,7 +2806,8 @@
 <event start="T729" end="T730">'re</event>
 <event start="T730" end="T229">done</event>
 <event start="T231" end="T232">yeah</event>
-</tier><tier id="TIE2" speaker="Director disfluency" category="v" type="t" display-name="Director disfluency [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE2" speaker="Director disfluency" category="v" type="t" display-name="Director disfluency [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T4" end="T5">PR</event>
 <event start="T5" end="T6">SP</event>
 <event start="T6" end="T7">FP</event>
@@ -2909,7 +2912,8 @@
 <event start="T225" end="T226"><![CDATA[<D1>]]></event>
 <event start="T783" end="T784"><![CDATA[<S1.5]]></event>
 <event start="T784" end="T785"><![CDATA[S1.5>]]></event>
-</tier><tier id="TIE3" speaker="Director uh/um" category="v" type="t" display-name="Director uh/um [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE3" speaker="Director uh/um" category="v" type="t" display-name="Director uh/um [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T5" end="T6">SP-B</event>
 <event start="T6" end="T7">UM-B</event>
 <event start="T246" end="T247">UH-M</event>
@@ -2945,7 +2949,8 @@
 <event start="T790" end="T217">SP-B</event>
 <event start="T217" end="T218">UM-B</event>
 <event start="T779" end="T780">SP</event>
-</tier><tier id="TIE4" speaker="Searcher" category="v" type="t" display-name="Searcher [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE4" speaker="Searcher" category="v" type="t" display-name="Searcher [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T1" end="T791">[pause]</event>
 <event start="T791" end="T792">okay {?}</event>
 <event start="T792" end="T793">[pause]</event>
@@ -3127,7 +3132,8 @@
 <event start="T996" end="T997">where are the other pink boxes?</event>
 <event start="T998" end="T999">we're done?</event>
 <event start="T1000" end="T1001">d-</event>
-</tier><tier id="TIE5" speaker="MemberS11WORD" category="v" type="t" display-name="MemberS11WORD"><event start="T791" end="T792">okay</event>
+</tier><tier d="TIE5" speaker="MemberS11WORD" category="v" type="t" display-name="MemberS11WORD">
+<event start="T791" end="T792">okay</event>
 <event start="T793" end="T794">yes</event>
 <event start="T795" end="T796">okay</event>
 <event start="T796" end="T1002">I</event>
@@ -4083,7 +4089,8 @@
 <event start="T1871" end="T1872">'re</event>
 <event start="T1872" end="T1873">done</event>
 <event start="T1873" end="T999">?</event>
-</tier><tier id="TIE6" speaker="Searcher disfluency" category="v" type="t" display-name="Searcher disfluency [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE6" speaker="Searcher disfluency" category="v" type="t" display-name="Searcher disfluency [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T1007" end="T1008">SP</event>
 <event start="T1013" end="T1015"><![CDATA[<S1]]></event>
 <event start="T1015" end="T1016">SP</event>
@@ -4203,7 +4210,8 @@
 <event start="T1939" end="T1940">SP</event>
 <event start="T994" end="T995">FP</event>
 <event start="T995" end="T996">SP</event>
-</tier><tier id="TIE7" speaker="Searcher UH/UM" category="v" type="t" display-name="Searcher UH/UM [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE7" speaker="Searcher UH/UM" category="v" type="t" display-name="Searcher UH/UM [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T1941" end="T800">SP-B</event>
 <event start="T800" end="T801">UM-B</event>
 <event start="T801" end="T802">SP-B</event>
@@ -4257,8 +4265,9 @@
 <event start="T224" end="T994">SP-B</event>
 <event start="T994" end="T995">UM-B</event>
 <event start="T995" end="T996">SP-B</event>
-</tier>   <tier category="v" display-name="POS" id="TIE8" type="t">
-      <event start="T2" end="T3">UH</event>
+</tier>   <tier ategory="v" display-name="POS" id="TIE8" type="t">
+
+<event start="T2" end="T3">UH</event>
       <event start="T791" end="T792">UH</event>
       <event start="T4" end="T5">RB</event>
       <event start="T6" end="T7">UH</event>
@@ -5806,8 +5815,9 @@
       <event start="T1873" end="T999">.</event>
       <event start="T231" end="T232">AP</event>
    </tier>
-   <tier category="v" display-name="Dependency" id="TIE9" type="t">
-      <event start="T2" end="T3" head="0">INTJ</event>
+   <tier ategory="v" display-name="Dependency" id="TIE9" type="t">
+
+     <event start="T2" end="T3" head="0">INTJ</event>
       <event start="T791" end="T792" head="0">INTJ</event>
       <event start="T4" end="T5" head="0">ROOT</event>
       <event start="T6" end="T7" head="0">INTJ</event>
@@ -7355,8 +7365,9 @@
       <event start="T1873" end="T999" head="2">P</event>
       <event start="T231" end="T232" head="0">INTJ</event>
    </tier>
-   <tier category="v" display-name="Constituency" id="TIE10" type="a">
-      <event start="T2" end="T3">INTJ</event>
+   <tier ategory="v" display-name="Constituency" id="TIE10" type="a">
+
+     <event start="T2" end="T3">INTJ</event>
       <event start="T791" end="T792">INTJ</event>
       <event start="T4" end="T5">ADVP</event>
       <event start="T6" end="T8">S</event>

@@ -16,6 +16,9 @@ class CrestParse(filename: String) {
 
     import scala.io.Source
     val file = Source.fromResource(filename)
+    val lines = file.getLines.toList
+    val tiers = lines.filter(_ contains "<tier ")
+
     file.getLines.toList.filter(_ contains "start=")
   }
 
@@ -42,7 +45,28 @@ class CrestParse(filename: String) {
     return (t1, t2, text)
   }
 
-
+  val corpus = List("Muri_07_S3_merged.xml",
+    "Muri_07_S4_merged.xml",
+    "Muri_07_S5_merged.xml",
+    "Muri_07_S6_merged.xml",
+    "Muri_07_S7_merged.xml",
+    "Muri_08_S1_merged.xml",
+    "Muri_08_S2_merged.xml",
+    "Muri_08_S3_merged.xml",
+    "Muri_08_S4_merged.xml",
+    "Muri_08_S5_merged.xml",
+    "Muri_08_S7_merged.xml",
+    "Muri_10_S2_merged.xml",
+    "Muri_10_S3_merged.xml",
+    "Muri_10_S4_merged.xml",
+    "Muri_10_S5_merged.xml",
+    "Muri_10_S6_merged.xml",
+    "Muri_10_S7_merged.xml",
+    "Muri_10_S8_merged.xml",
+    "Muri_10_S9_merged.xml",
+    "Muri_10_S10_merged.xml",
+    "Muri_10_S11_merged.xml",
+    "Muri_10_S1_merged.xml")
 
   val filename = "Muri_07_S3_merged.xml"
   val lines = get_file(filename)
@@ -52,3 +76,4 @@ class CrestParse(filename: String) {
 
 
 }
+

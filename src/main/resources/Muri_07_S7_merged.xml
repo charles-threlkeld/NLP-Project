@@ -1994,7 +1994,8 @@
 <tli id="T1332" time="608.7206784043034"/>
 <tli id="T216" time="609.496"/>
 </common-timeline>
-<tier id="TIE0" speaker="Director s7" category="v" type="t" display-name="Director s7 [v]"><event start="T1" end="T2">I can hear you can you hear me?</event>
+<tier d="TIE0" speaker="Director s7" category="v" type="t" display-name="Director s7 [v]">
+  <event start="T1" end="T2">I can hear you can you hear me?</event>
 <event start="T3" end="T4">alright</event>
 <event start="T5" end="T6">alright</event>
 <event start="T7" end="T8">from this . first h[o]le[?] do you wanna get the cardboard box?</event>
@@ -2102,7 +2103,8 @@
 <event start="T210" end="T211">okay</event>
 <event start="T212" end="T213">alright our time is up</event>
 <event start="T214" end="T215">get it get it</event>
-</tier><tier id="TIE1" speaker="DirectorS7WORD" category="v" type="t" display-name="DirectorS7WORD"><event start="T1" end="T217">I</event>
+</tier><tier d="TIE1" speaker="DirectorS7WORD" category="v" type="t" display-name="DirectorS7WORD">
+<event start="T1" end="T217">I</event>
 <event start="T217" end="T218">can</event>
 <event start="T218" end="T219">hear</event>
 <event start="T219" end="T220">you</event>
@@ -3047,7 +3049,8 @@
 <event start="T1109" end="T1110">it</event>
 <event start="T1111" end="T1112">get</event>
 <event start="T1112" end="T215">it</event>
-</tier><tier id="TIE2" speaker="Member s7" category="v" type="t" display-name="Member s7 [v]"><event start="T1113" end="T1114">can you hear me captain?</event>
+</tier><tier d="TIE2" speaker="Member s7" category="v" type="t" display-name="Member s7 [v]">
+<event start="T1113" end="T1114">can you hear me captain?</event>
 <event start="T1115" end="T1116">yep</event>
 <event start="T1117" end="T1118">alright</event>
 <event start="T1119" end="T1120">alright I'm goin' in</event>
@@ -3157,7 +3160,8 @@
 <event start="T1327" end="T1328">oh and then one . around the corner from the little green box</event>
 <event start="T1329" end="T1330">ya:h flying leap towards the last one [laugh]</event>
 <event start="T1331" end="T1332">[laugh]</event>
-</tier><tier id="TIE3" speaker="MemberS7WORD" category="v" type="t" display-name="MemberS7WORD"><event start="T1113" end="T1333">can</event>
+</tier><tier d="TIE3" speaker="MemberS7WORD" category="v" type="t" display-name="MemberS7WORD">
+<event start="T1113" end="T1333">can</event>
 <event start="T1333" end="T1334">you</event>
 <event start="T1334" end="T1335">hear</event>
 <event start="T1335" end="T1336">me</event>
@@ -3847,8 +3851,9 @@
 <event start="T1945" end="T1946">the</event>
 <event start="T1946" end="T1947">last</event>
 <event start="T1947" end="T1330">one</event>
-</tier>   <tier category="v" display-name="POS" id="TIE5" type="t">
-      <event start="T1113" end="T1333">MD</event>
+</tier>   <tier ategory="v" display-name="POS" id="TIE5" type="t">
+
+<event start="T1113" end="T1333">MD</event>
       <event start="T1333" end="T1334">PRP</event>
       <event start="T1334" end="T1335">VB</event>
       <event start="T1335" end="T1336">PRP</event>
@@ -5489,8 +5494,9 @@
       <event start="T1111" end="T1112">VBI</event>
       <event start="T1112" end="T215">PRP</event>
    </tier>
-   <tier category="v" display-name="Dependency" id="TIE6" type="t">
-      <event start="T1113" end="T1333" head="0">ROOT</event>
+   <tier ategory="v" display-name="Dependency" id="TIE6" type="t">
+
+     <event start="T1113" end="T1333" head="0">ROOT</event>
       <event start="T1333" end="T1334" head="1">SBJ</event>
       <event start="T1334" end="T1335" head="1">VC</event>
       <event start="T1335" end="T1336" head="3">OBJ</event>
@@ -7131,8 +7137,9 @@
       <event start="T1111" end="T1112" head="0">ROOT</event>
       <event start="T1112" end="T215" head="1">OBJ</event>
    </tier>
-   <tier category="v" display-name="Constituency" id="TIE7" type="a">
-      <event start="T1113" end="T1114">SQ</event>
+   <tier ategory="v" display-name="Constituency" id="TIE7" type="a">
+
+     <event start="T1113" end="T1114">SQ</event>
       <event GF="SBJ" start="T1333" end="T1334">NP</event>
       <event start="T1334" end="T1114">VP</event>
       <event GF="OBJ" start="T1335" end="T1336">NP</event>

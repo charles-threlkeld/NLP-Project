@@ -2312,7 +2312,8 @@
 <tli id="T1410" time="621.6403120009594"/>
 <tli id="T278" time="622.1271875"/>
 </common-timeline>
-<tier id="TIE0" speaker="Director s4" category="v" type="t" display-name="Director s4"><event start="T1" end="T2">andrew can you hear me?</event>
+<tier d="TIE0" speaker="Director s4" category="v" type="t" display-name="Director s4">
+  <event start="T1" end="T2">andrew can you hear me?</event>
 <event start="T3" end="T4">okay cool</event>
 <event start="T5" end="T6">[laugh]</event>
 <event start="T6" end="T7">test rats man</event>
@@ -2451,7 +2452,8 @@
 <event start="T272" end="T273">uh I don't know how we did</event>
 <event start="T274" end="T275">that was a quick three minutes yeah</event>
 <event start="T276" end="T277">oh we're good? okay</event>
-</tier><tier id="TIE1" speaker="DirectorS4WORD" category="v" type="t" display-name="DirectorS4WORD"><event start="T1" end="T279">andrew</event>
+</tier><tier d="TIE1" speaker="DirectorS4WORD" category="v" type="t" display-name="DirectorS4WORD">
+<event start="T1" end="T279">andrew</event>
 <event start="T279" end="T280">can</event>
 <event start="T280" end="T281">you</event>
 <event start="T281" end="T282">hear</event>
@@ -3451,7 +3453,8 @@
 <event start="T2260" end="T1117">'re</event>
 <event start="T1117" end="T1118">good</event>
 <event start="T1119" end="T277">okay</event>
-</tier><tier id="TIE2" speaker="Member s4" category="v" type="t" display-name="Member s4"><event start="T1120" end="T1121">yeah I can hear you</event>
+</tier><tier d="TIE2" speaker="Member s4" category="v" type="t" display-name="Member s4">
+<event start="T1120" end="T1121">yeah I can hear you</event>
 <event start="T1122" end="T1123">alright cool</event>
 <event start="T1124" end="T1125">go straight ahead findin' the box then the green</event>
 <event start="T1126" end="T1127">and then I'm comin' back here? . once I do?</event>
@@ -3593,7 +3596,8 @@
 <event start="T1405" end="T1406">alright that was. that was fun</event>
 <event start="T1407" end="T1408">I'm not gonna lie I had a good time</event>
 <event start="T1409" end="T1410">I'm not fast and I slowed this one [?]</event>
-</tier><tier id="TIE3" speaker="MemberS4WORD" category="v" type="t" display-name="MemberS4WORD"><event start="T1120" end="T1411">yeah</event>
+</tier><tier d="TIE3" speaker="MemberS4WORD" category="v" type="t" display-name="MemberS4WORD">
+<event start="T1120" end="T1411">yeah</event>
 <event start="T1411" end="T1412">I</event>
 <event start="T1412" end="T1413">can</event>
 <event start="T1413" end="T1414">hear</event>
@@ -4529,8 +4533,9 @@
 <event start="T2183" end="T2184">this</event>
 <event start="T2184" end="T2185">one</event>
 <event start="T2185" end="T1410">last</event>
-</tier>   <tier category="v" display-name="POS" id="TIE5" type="t">
-      <event start="T1" end="T279">NN</event>
+</tier>   <tier ategory="v" display-name="POS" id="TIE5" type="t">
+
+<event start="T1" end="T279">NN</event>
       <event start="T279" end="T280">MD</event>
       <event start="T280" end="T281">PRP</event>
       <event start="T281" end="T282">VB</event>
@@ -6462,8 +6467,9 @@
       <event start="T2184" end="T2185">NN</event>
       <event start="T2185" end="T1410">JJ</event>
    </tier>
-   <tier category="v" display-name="Dependency" id="TIE6" type="t">
-      <event start="T1" end="T279" head="0">ROOT</event>
+   <tier ategory="v" display-name="Dependency" id="TIE6" type="t">
+
+     <event start="T1" end="T279" head="0">ROOT</event>
       <event start="T279" end="T280" head="0">ROOT</event>
       <event start="T280" end="T281" head="2">SBJ</event>
       <event start="T281" end="T282" head="2">VC</event>
@@ -8395,8 +8401,9 @@
       <event start="T2184" end="T2185" head="7">OBJ</event>
       <event start="T2185" end="T1410" head="9">NMOD</event>
    </tier>
-   <tier category="v" display-name="Constituency" id="TIE7" type="a">
-      <event start="T1" end="T2">SQ</event>
+   <tier ategory="v" display-name="Constituency" id="TIE7" type="a">
+
+     <event start="T1" end="T2">SQ</event>
       <event GF="VOC" start="T1" end="T279">NP</event>
       <event GF="SBJ" start="T280" end="T281">NP</event>
       <event start="T281" end="T2262">VP</event>

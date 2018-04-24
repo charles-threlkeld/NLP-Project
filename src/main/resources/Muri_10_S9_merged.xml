@@ -2332,7 +2332,8 @@
 <tli id="T321" time="558.0034227897168"/>
 <tli id="T322" time="558.5037641723357"/>
 </common-timeline>
-<tier id="TIE0" speaker="Director" category="v" type="t" display-name="Director [v]"><event start="T0" end="T1">[setup]</event>
+<tier d="TIE0" speaker="Director" category="v" type="t" display-name="Director [v]">
+  <event start="T0" end="T1">[setup]</event>
 <event start="T2" end="T3">okay</event>
 <event start="T4" end="T5">you're going to u:m [pause] walk straight in front of you</event>
 <event start="T5" end="T6">you will pass um two: uh probably closed doors on your left</event>
@@ -2516,7 +2517,8 @@
 <event start="T316" end="T317">oh we're done Kristen</event>
 <event start="T318" end="T319">sad day</event>
 <event start="T320" end="T321">good jo-</event>
-</tier><tier id="TIE1" speaker="DirectorS9WORD" category="v" type="t" display-name="DirectorS9WORD"><event start="T2" end="T3">okay</event>
+</tier><tier d="TIE1" speaker="DirectorS9WORD" category="v" type="t" display-name="DirectorS9WORD">
+<event start="T2" end="T3">okay</event>
 <event start="T4" end="T323">you</event>
 <event start="T323" end="T324">'re</event>
 <event start="T324" end="T325">goint</event>
@@ -3336,7 +3338,8 @@
 <event start="T982" end="T319">day</event>
 <event start="T320" end="T983">good</event>
 <event start="T983" end="T321">job</event>
-</tier><tier id="TIE2" speaker="Director disfluency" category="v" type="t" display-name="Director disfluency [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE2" speaker="Director disfluency" category="v" type="t" display-name="Director disfluency [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T984" end="T985">FP</event>
 <event start="T985" end="T986">SP</event>
 <event start="T987" end="T988">FP</event>
@@ -3417,7 +3420,8 @@
 <event start="T282" end="T1053"><![CDATA[<S2]]></event>
 <event start="T1053" end="T1054"><![CDATA[S2>]]></event>
 <event start="T295" end="T296">FP</event>
-</tier><tier id="TIE3" speaker="Director uh/um" category="v" type="t" display-name="Director uh/um [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE3" speaker="Director uh/um" category="v" type="t" display-name="Director uh/um [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T984" end="T985">UM-M</event>
 <event start="T985" end="T986">SP-M</event>
 <event start="T987" end="T988">UH-M</event>
@@ -3481,7 +3485,8 @@
 <event start="T281" end="T282">UH-B</event>
 <event start="T294" end="T295">SP-B</event>
 <event start="T295" end="T296">UM-B</event>
-</tier><tier id="TIE4" speaker="Searcher" category="v" type="t" display-name="Searcher [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE4" speaker="Searcher" category="v" type="t" display-name="Searcher [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T1063" end="T1064">oka:y</event>
 <event start="T1065" end="T1066">I found a green box</event>
 <event start="T1067" end="T1068">okay</event>
@@ -3655,7 +3660,8 @@
 <event start="T1343" end="T1344">shall I: -?</event>
 <event start="T1345" end="T1346">oh</event>
 <event start="T1347" end="T322">oh</event>
-</tier><tier id="TIE5" speaker="MemberS9WORD" category="v" type="t" display-name="MemberS9WORD"><event start="T1063" end="T1064">okay</event>
+</tier><tier d="TIE5" speaker="MemberS9WORD" category="v" type="t" display-name="MemberS9WORD">
+<event start="T1063" end="T1064">okay</event>
 <event start="T1065" end="T1348">I</event>
 <event start="T1348" end="T1349">found</event>
 <event start="T1349" end="T1350">a</event>
@@ -4598,7 +4604,8 @@
 <event start="T2168" end="T1344">?</event>
 <event start="T1345" end="T1346">oh</event>
 <event start="T1347" end="T322">oh</event>
-</tier><tier id="TIE6" speaker="Searcher disfluency" category="v" type="t" display-name="Searcher disfluency [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE6" speaker="Searcher disfluency" category="v" type="t" display-name="Searcher disfluency [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T2169" end="T2170">SP</event>
 <event start="T2171" end="T2172">SP</event>
 <event start="T2173" end="T2174"><![CDATA[<S1]]></event>
@@ -4667,7 +4674,8 @@
 <event start="T2241" end="T2242">SP</event>
 <event start="T2242" end="T2243"><![CDATA[R2>]]></event>
 <event start="T2244" end="T2245">PR</event>
-</tier><tier id="TIE7" speaker="Searcher UH/UM" category="v" type="t" display-name="Searcher UH/UM [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE7" speaker="Searcher UH/UM" category="v" type="t" display-name="Searcher UH/UM [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T123" end="T1164">SP-B</event>
 <event start="T1164" end="T1165">UH-B</event>
 <event start="T1165" end="T1166">SP-B</event>
@@ -4691,8 +4699,9 @@
 <event start="T1263" end="T1264">SP-B</event>
 <event start="T232" end="T1273">SP-B</event>
 <event start="T1273" end="T1274">UH-B</event>
-</tier>   <tier category="v" display-name="POS" id="TIE8" type="t">
-      <event start="T1063" end="T1064">UH</event>
+</tier>   <tier ategory="v" display-name="POS" id="TIE8" type="t">
+
+<event start="T1063" end="T1064">UH</event>
       <event start="T2" end="T3">UH</event>
       <event start="T4" end="T323">PRP</event>
       <event start="T323" end="T324">VBP</event>
@@ -6462,8 +6471,9 @@
       <event start="T983" end="T321">NN</event>
       <event start="T983" end="T321">UH</event>
    </tier>
-   <tier category="v" display-name="Dependency" id="TIE9" type="t">
-      <event start="T1063" end="T1064" head="0">INTJ</event>
+   <tier ategory="v" display-name="Dependency" id="TIE9" type="t">
+
+     <event start="T1063" end="T1064" head="0">INTJ</event>
       <event start="T2" end="T3" head="0">INTJ</event>
       <event start="T4" end="T323" head="3">SBJ</event>
       <event start="T323" end="T324" head="0">ROOT</event>
@@ -8233,8 +8243,9 @@
       <event start="T983" end="T321" head="ROOT">ROOT</event>
       <event start="T983" end="T321" head="0">INTJ</event>
    </tier>
-   <tier category="v" display-name="Constituency" id="TIE10" type="a">
-      <event start="T1063" end="T1064">INTJ</event>
+   <tier ategory="v" display-name="Constituency" id="TIE10" type="a">
+
+     <event start="T1063" end="T1064">INTJ</event>
       <event start="T2" end="T6">S</event>
       <event start="T2" end="T5">S</event>
       <event start="T2" end="T3">INTJ</event>
@@ -9861,4 +9872,4 @@
       <event start="T983" end="T321">INTJ</event>
    </tier>
 </basic-body>
-<tierformat-table><timeline-item-format show-every-nth-numbering="1" show-every-nth-absolute="1" absolute-time-format="time" miliseconds-digits="1"/><tier-format tierref="EMPTY"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">white</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">2</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="COLUMN-LABEL"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">lightGray</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">7</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE7"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE6"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="ROW-LABEL"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Bold</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">lightGray</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">10</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE5"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE4"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE3"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE2"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE1"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE0"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="EMPTY-EDITOR"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">white</property><property name="chunk-border-style">solid</property><property name="bg-color">lightGray</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">2</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="SUB-ROW-LABEL"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Right</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">8</property><property name="font-name">Times New Roman</property></tier-format></tierformat-table></basic-transcription>
+<tierfrmat-table><timeline-item-format show-every-nth-numbering="1" show-every-nth-absolute="1" absolute-time-format="time" miliseconds-digits="1"/><tier-ormat tierref="EMPTY"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">white</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">2</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="COLUMN-LABEL"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">lightGray</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">7</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE7"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE6"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="ROW-LABEL"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Bold</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">lightGray</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">10</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE5"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE4"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE3"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE2"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE1"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="TIE0"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">12</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="EMPTY-EDITOR"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">white</property><property name="chunk-border-style">solid</property><property name="bg-color">lightGray</property><property name="text-alignment">Left</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">2</property><property name="font-name">Times New Roman</property></tier-format><tier-format tierref="SUB-ROW-LABEL"><property name="row-height-calculation">Generous</property><property name="fixed-row-height">10</property><property name="font-face">Plain</property><property name="font-color">black</property><property name="chunk-border-style">solid</property><property name="bg-color">white</property><property name="text-alignment">Right</property><property name="chunk-border-color">#R00G00B00</property><property name="chunk-border"></property><property name="font-size">8</property><property name="font-name">Times New Roman</property></tier-format></tierformat-table></basic-transcription>

@@ -1611,7 +1611,8 @@
 <tli id="T750" time="542.3733045412436"/>
 <tli id="T211" time="542.5342403628118"/>
 </common-timeline>
-<tier id="TIE0" speaker="Director" category="v" type="t" display-name="Director [v]"><event start="T0" end="T1">[setup]</event>
+<tier d="TIE0" speaker="Director" category="v" type="t" display-name="Director [v]">
+  <event start="T0" end="T1">[setup]</event>
 <event start="T2" end="T3">okay</event>
 <event start="T4" end="T5">um</event>
 <event start="T6" end="T7">where - where are you starting?</event>
@@ -1723,7 +1724,8 @@
 <event start="T206" end="T207">okay</event>
 <event start="T207" end="T208">we're done</event>
 <event start="T209" end="T210">{laugh}</event>
-</tier><tier id="TIE1" speaker="DirectorS6WORD" category="v" type="t" display-name="DirectorS6WORD"><event start="T2" end="T3">okay</event>
+</tier><tier d="TIE1" speaker="DirectorS6WORD" category="v" type="t" display-name="DirectorS6WORD">
+<event start="T2" end="T3">okay</event>
 <event start="T4" end="T5">um</event>
 <event start="T6" end="T212">where</event>
 <event start="T212" end="T213">-</event>
@@ -2123,7 +2125,8 @@
 <event start="T207" end="T528">we</event>
 <event start="T528" end="T529">are</event>
 <event start="T529" end="T208">done</event>
-</tier><tier id="TIE2" speaker="Director Move" category="v" type="t" display-name="Director Move [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE2" speaker="Director Move" category="v" type="t" display-name="Director Move [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T2" end="T3">Ready</event>
 <event start="T4" end="T5">um</event>
 <event start="T6" end="T7">Query-W</event>
@@ -2235,7 +2238,8 @@
 <event start="T206" end="T207">Ready</event>
 <event start="T207" end="T208">Explain</event>
 <event start="T209" end="T210">{laugh}</event>
-</tier><tier id="TIE3" speaker="Searcher" category="v" type="t" display-name="Searcher [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE3" speaker="Searcher" category="v" type="t" display-name="Searcher [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T530" end="T531">uh</event>
 <event start="T531" end="T532">d- it's: uh the first room</event>
 <event start="T532" end="T533">uh</event>
@@ -2358,7 +2362,8 @@
 <event start="T745" end="T746">by the keyboard at the computer?</event>
 <event start="T747" end="T748">mmm I don't see one</event>
 <event start="T749" end="T750">are we done with the experiment?</event>
-</tier><tier id="TIE4" speaker="MemberS6WORD" category="v" type="t" display-name="MemberS6WORD"><event start="T530" end="T531">uh</event>
+</tier><tier d="TIE4" speaker="MemberS6WORD" category="v" type="t" display-name="MemberS6WORD">
+<event start="T530" end="T531">uh</event>
 <event start="T531" end="T751">d-</event>
 <event start="T751" end="T752">it</event>
 <event start="T752" end="T753">s</event>
@@ -3191,7 +3196,8 @@
 <event start="T1542" end="T1543">the</event>
 <event start="T1543" end="T1544">experiment</event>
 <event start="T1544" end="T750">?</event>
-</tier><tier id="TIE5" speaker="Searcher Move" category="v" type="t" display-name="Searcher Move [v]"><event start="T0" end="T1">[setup]</event>
+</tier><tier d="TIE5" speaker="Searcher Move" category="v" type="t" display-name="Searcher Move [v]">
+<event start="T0" end="T1">[setup]</event>
 <event start="T530" end="T531">uh</event>
 <event start="T531" end="T532">Reply-W</event>
 <event start="T532" end="T533">uh</event>
@@ -3314,8 +3320,9 @@
 <event start="T745" end="T746">Check</event>
 <event start="T747" end="T748">Explain</event>
 <event start="T749" end="T750">Check</event>
-</tier>   <tier category="v" display-name="POS" id="TIE6" type="t">
-      <event start="T2" end="T3">UH</event>
+</tier>   <tier ategory="v" display-name="POS" id="TIE6" type="t">
+
+<event start="T2" end="T3">UH</event>
       <event start="T4" end="T5">UH</event>
       <event start="T6" end="T212">WRB</event>
       <event start="T212" end="T213">:</event>
@@ -4555,8 +4562,9 @@
       <event start="T1543" end="T1544">NN</event>
       <event start="T1544" end="T750">.</event>
    </tier>
-   <tier category="v" display-name="Dependency" id="TIE7" type="t">
-      <event start="T2" end="T3" head="0">INTJ</event>
+   <tier ategory="v" display-name="Dependency" id="TIE7" type="t">
+
+     <event start="T2" end="T3" head="0">INTJ</event>
       <event start="T4" end="T5" head="0">INTJ</event>
       <event start="T6" end="T212" head="0">ROOT*</event>
       <event start="T212" end="T213" head="3">P</event>
@@ -5796,8 +5804,9 @@
       <event start="T1543" end="T1544" head="4">PMOD</event>
       <event start="T1544" end="T750" head="1">P</event>
    </tier>
-   <tier category="v" display-name="Constituency" id="TIE8" type="a">
-      <event start="T2" end="T7">SBARQ</event>
+   <tier ategory="v" display-name="Constituency" id="TIE8" type="a">
+
+     <event start="T2" end="T7">SBARQ</event>
       <event start="T2" end="T5">INTJ</event>
       <event start="T6" end="T212">FRAG</event>
       <event start="T213" end="T214">WHADVP</event>
