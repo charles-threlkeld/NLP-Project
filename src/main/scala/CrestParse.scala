@@ -220,10 +220,13 @@ class CrestParse() {
 
     val candidates = for (u <- corpus_map) yield {
       val disfl = u._2("disfluencies").filter(_ != null)
-      if (disfl.length > 1)
-        u._1
-      else
+      val toks = u._2("tokens").filter(_ != null)
+      if (disfl.length == 1)
         null
+      else if (toks.length <= 1)
+        null
+      else 
+        u._1
     }
 
     candidates.filter(_ != null)
