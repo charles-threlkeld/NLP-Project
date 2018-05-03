@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- (c) http://www.rrz.uni-hamburg.de/exmaralda -->
 <basic-transcription>
@@ -3295,7 +3296,9 @@
 <event start="T1135" end="T1628">what</event>
 <event start="T1628" end="T1136">?</event>
 <event start="T1137" end="T1138">oh</event>
-</tier><tier d="TIE6" speaker="-1" category="v" type="t" display-name="MemberS3_Move"></tier><tier id="TIE7" speaker="-2" category="v" type="t" display-name="MemberS3_Turn"></tier>   <tier category="v" display-name="POS" id="TIE10" type="t">
+</tier><tier d="TIE6" speaker="-1" category="v" type="t" display-name="MemberS3_Move"></tier>
+<tier id="TIE7" speaker="-2" category="v" type="t" display-name="MemberS3_Turn"></tier>
+<tier category="v" display-name="POS" id="TIE10" type="t">
 
 <event astart="T0" end="T244">VBP</event>
       <event astart="T244" end="T245">PRP</event>

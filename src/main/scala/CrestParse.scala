@@ -202,11 +202,9 @@ class CrestParse() {
         val simpleTokens: List[String] = tokenList.map(_._3)
 
         // The final tuple for each utterance
-        val t = (u._3, Map("tokens" -> simpleTokens,
+        (u._3, Map("tokens" -> simpleTokens,
           "POS" -> pOSList,
           "disfluencies" -> disfluencyList))
-        println(t)
-        t
       }
     }
     return corpus_map
@@ -264,7 +262,6 @@ class CrestParse() {
     if (c.isEmpty)
       return iter
     else {
-      println(c.head)
       builder(c.tail, process_xml_lines(get_file(c.head)))
     }
   }
