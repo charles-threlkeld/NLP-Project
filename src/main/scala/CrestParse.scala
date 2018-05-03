@@ -119,28 +119,90 @@ class CrestParse() {
     // reference each one later when linking utterances to tokens, part-of-
     // speech, and disfluencies
 
+    val xml_map = tier_labels zip clean_events toMap
 
+    // So, now we have a scala representation of the important parts of our
+    // xml corpus in the following form:
+    // Map (tier-display-name ->
+    //        List(start, end, event-data)
 
+    // Let's get a list of all utterances:
 
+    val dDNs = tier_labels.filter(_ contains "Director") // Director Display Names
+    val directorUtteranceDisplayName = dDNs(dDNs.map(_.length) indexOf dDNs.map(_.length).min)
+    val directorUtterances = xml_map(directorUtteranceDisplayName)
+    val mDNs = tier_labels.filter(_ contains "Member") // Member Display Names
+    val memberUtteranceDisplayName = mDNs(mDNs.map(_.length) indexOf mDNs.map(_.length).min)
+    val memberUtterances = xml_map(memberUtteranceDisplayName)
+    val utterances = directorUtterances ++ memberUtterances // List of all utterance events
 
+    // Similarly, let's conglomerate tokens and disfluencies into one list each:
 
+    val directorTokens = xml_map(dDNs.filter(_ contains "WORD")(0))
+    val memberTokens = xml_map(mDNs.filter(_ contains "WORD")(0))
+    val tokens = directorTokens ++ memberTokens
 
+    val partsOfSpeech = xml_map(tier_labels.filter(_ contains "POS")(0))
 
+    val directorDisfluencies = xml_map(dDNs.filter(_ contains "Disfluency")(0))
+    val memberDisfluencies = xml_map(mDNs.filter(_ contains "Disfluency")(0))
+    val disfluencies = directorDisfluencies ++ memberDisfluencies
 
+    // Finally, we can map utterances to their tokens, parts of speech, and
+    // disfluencies
 
-    // Then, we can tag the utterances by following the start/end tags
-    // as linked lists
-    // E.g. an utterance may have start="T5" end="T10", so we find the 
-    // token with start="T5", and add it to a list.
-    // Then check the token's end tag. If it is "T10", then stop adding
-    // tokens to the list
-    // If it is not "T10", find the token that has start="T10" and recur.
-    // After finding stop="T10", find the part-of-speech tags that have 
-    // been tagged for the tokens of the utterance.
-    // Finally, also tag any disfluencies if they occur, in the appropriate
-    // corpus files (i.e. '08 and '10 files)
+    val corpus_map = for(u <- utterances) yield {
 
-    // Do this for each utterance in the tiers Director and Speaker
+      // tokens and POS tags can follow the start/stop chain
+      def get_events_in_range(events: List[String], start: String,
+        end: String): List[String, String, String] = {
+
+        // We can build the lists incrementally, starting from empty
+        def builder(e: List[String], current: String,
+          seeking: String, iter: List[String]): List[String, String, String] = {
+          if (current == seeking)
+            return iter
+          else {
+            val next = e.filter(_._1 == current)(0)
+            val next_end = next._2
+            val next_text = next._3
+            return builder(e, next_end, seeking, next_text :: iter)
+          }
+        }
+        builder(events, start, end, List())
+      }
+
+      // Since disfluencies are relatively rare, we only tag them when present
+      // else null
+      def get_disfluencies(events: List[String], tokens: List[String]): List[String] = {
+
+        def builder(e: List[String], current: String): String = {
+          val d = e.filter(_._1 == current._1)
+          if (d == List())
+            return null
+          else
+            return d._3
+        }
+      }
+
+      val start = u._1
+      val end = u._2
+
+      val tokenList = get_events_in_range(tokens, start, end)
+      val POSList = get_events_in_range(partsOfSpeech, start, end)
+      val disfluencyList = get_disfluencies(disfluencies, tokenList)
+
+      // Strip tokens and POS to only the data, since we don't need the start-stop
+      // values any more
+      val simpleTokens = tokenList.map(_._3)
+      val simplePOS = POSList.map(_._3)
+
+      // The final map for each utterance
+      Map("utterance" -> u,
+        "tokens" -> simpleTokens,
+        "POS" -> simplePOS,
+        "disfluencies" -> disfluencyList)
+    }
 
   }
 
@@ -169,8 +231,15 @@ class CrestParse() {
 
   val filename = "Muri_07_S3_merged.xml"
   val lines = get_file(filename)
-  val processed_lines = process_xml_lines(lines)
-  // TODO: Match words to POS tags
-  // Match word-tag tuples to utterances
+
+
+  // corpus map takes the following form:
+  // List(Map("utterance"    -> String
+  //          "tokens"       -> List(String)
+  //          "POS"          -> List(String)
+  //          "disfluencies" -> List(String))
+  val corpus_map = process_xml_lines(lines)
+
+  
 }
 
