@@ -207,7 +207,7 @@ class CrestParse() {
           "disfluencies" -> disfluencyList))
       }
     }
-    return corpus_map
+    return corpus_map.filter(_ != null)
   }
 
   // This function will find all the utterances in the corpus map
@@ -219,13 +219,13 @@ class CrestParse() {
   def find_repairable_utterances(): List[String] = {
 
     val candidates = for (u <- corpus_map) yield {
-
-      val disfluencies = u._2("disfluencies").filter(_ != null)
-      if (disfluencies.length == 0)
-        null
-      else
+      val disfl = u._2("disfluencies").filter(_ != null)
+      if (disfl.length > 1)
         u._1
+      else
+        null
     }
+
     candidates.filter(_ != null)
   }
 

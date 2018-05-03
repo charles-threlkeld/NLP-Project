@@ -22,9 +22,6 @@ object Main extends App {
   //tagger.test("test-pos.txt")
 
   val cp = new nltk.CrestParse()
-
-  val repairable_sentences = List()
-  //val repairable_sentences = cp.find_repairable_utterances()
+  val repairable_sentences = cp.find_repairable_utterances()
   for (i <- repairable_sentences) println(i)
 }
-
