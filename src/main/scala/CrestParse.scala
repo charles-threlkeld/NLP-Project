@@ -36,14 +36,30 @@ class CrestParse() {
   // Output: (Text, Begin-time, End-time)
   def process_xml_lines(xml_list: List[String]): (Int, Int, String) = {
 
+    // This helper function will get the values of any id tag in an xml line
+    // It does not handle tag not found errors, though so be careful.
+    // Input: xml_line: a String in the xml format
+    // Input: tag: the tag string to find, e.g. "display-name"
+    // Output: String: the tag value, e.g. "DirectorS1 [v]"
     def get_tag(xml_line: String, tag: String): String = {
-      val tagStart = (xml_line indexOf tag) + tag.length + 2
+      val expanded_tag = tag + "=\""
+      val tagStart = (xml_line indexOf expanded_tag) + expanded_tag.length + 2
       if (tagStart == -1)
         ""
       else {
         val endOfLine = xml_line.slice(tagStart, xml_line.length)
         endOfLine.slice(0, endOfLine indexOf "\"")
       }
+    }
+
+    // This function will get the content of an xml line.
+    // That is, the data that is within the markup
+    // This isn't the most robust function, but it should serve for our corpus
+    // Input: xml_line: a String in xml format, e.g. "<event>Andy</event>
+    // Output: String: the data, e.g. "Andy"
+    def get_data(xml_line: String): String = {
+      val prefix = xml_line.slice(0, xml_line lastIndexOf "/")
+      prefix.slice((prefix lastIndexOf ">") + 1, prefix.length - 1)
     }
 
     // Idea:
@@ -67,19 +83,48 @@ class CrestParse() {
     // Director UH/UM: non-word disfluencies, e.g. "UM-B"
     // Searcher UH/UM: non-word disfluencies, e.g. "SP-B"
     
-    val tier_lines = xml_list.zipWithIndex.filter(_._1 contains "<tier ")
-    val tier_labels = tier_lines.map(_._1) map (get_tag(_, "display-name"))
-    val event_groups = for (i <- tier_lines.length - 1) {
-      xml_lines.slice(tier_lines(i)._2, tier_lines(i + 1)._2)
-    }
-    
-
+    val (tier_lines, indices) = xml_list.zipWithIndex.filter(_._1 contains "<tier ") unzip
+    val tier_labels = tier_lines map (get_tag(_, "display-name"))
 
     // Each tier has a list of events that occured within that spec.
     // Each event has a start timestamp and an end timestamp
     // After gathering the indices of each tier start, we can segment 
     // the corpus into event types, and distinct sublists according
     // the the tiers
+
+    val slice_boundaries = indices ++ List(tier_labels.length)
+    val event_groups = for (i <- (0 to (indices.length - 1))) yield {
+      xml_list.slice(slice_boundaries(i) + 1, slice_boundaries(i + 1))
+    }
+
+    // We can process each event to be un a usable format with start and
+    // end tags and the information, but without xml decoration
+    // Each event can be represented as a tuple (start, end, text)
+    // Note that start and end are still strings of the form "Tx" where
+    // x is some natural number. We could cast these to ints if needed.
+
+    val clean_events = for (g <- event_groups) yield {  // For each group
+      val es = for (e <- g) yield {                              // For each event
+        if (e contains "<event ") {
+          val start = get_tag(e, "start")
+          val end = get_tag(e, "end")
+          val text = get_data(e)
+          (start, end, text)
+        } else null
+      }
+      es.filter(_ != null)
+    }
+
+    // Next, we link the tiers to their respective events, so that we can
+    // reference each one later when linking utterances to tokens, part-of-
+    // speech, and disfluencies
+
+
+
+
+
+
+
 
 
 
