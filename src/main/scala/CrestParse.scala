@@ -12,7 +12,7 @@ class CrestParse() {
   // Load a corpus file
   // Input: A filename (e.g. "Muri_07_S3_merged.xml")
   // Output: A list of the lines in the file
-  def get_file(filename: String): List[String] = {
+  private def get_file(filename: String): List[String] = {
 
     import scala.io.Source
     val file = Source.fromResource(filename)
@@ -27,7 +27,7 @@ class CrestParse() {
   // Transform xml to text and timestamps
   // Input: a single line of xml (<event ...>Text</event>)
   // Output: (Text, Begin-time, End-time)
-  def process_xml_lines(xml_list: List[String]): CorpusMap = {
+  private def process_xml_lines(xml_list: List[String]): CorpusMap = {
 
     // This helper function will get the values of any id tag in an xml line
     // It does not handle tag not found errors, though so be careful.
@@ -232,7 +232,7 @@ class CrestParse() {
     candidates.filter(_ != null)
   }
 
-  val corpus = List(
+  private val corpus = List(
     "Muri_07_S3_merged.xml",
     "Muri_07_S4_merged.xml",
     "Muri_07_S5_merged.xml",
@@ -261,7 +261,7 @@ class CrestParse() {
   //          "tokens"       -> List(String)
   //          "POS"          -> List(String)
   //          "disfluencies" -> List(String))
-  def builder(c: List[String], iter: CorpusMap): CorpusMap = {
+  private def builder(c: List[String], iter: CorpusMap): CorpusMap = {
     if (c.isEmpty)
       return iter
     else {

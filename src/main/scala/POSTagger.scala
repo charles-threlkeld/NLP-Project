@@ -5,7 +5,7 @@ class POSTagger(toks: Tokenizer) {
   // Map Penn tags to a simpler set
   // Input: String - Penn Tag
   // Output: String - Simple Tag
-  def simplify(penn_tag: String): String = penn_tag match {
+  private def simplify(penn_tag: String): String = penn_tag match {
     // One of the set {Adjective, Adverb, Conjunction, Determiner, Noun, Number, Preposition, Verb, Beginning}
     case "CC" => "Conjunction"
     case "CD" => "Number"
@@ -49,7 +49,7 @@ class POSTagger(toks: Tokenizer) {
   // Output: 2-tuple:
   //         List[String] of words in the training set
   //         List[String] of their associated POS tags
-  def reformat_file(filename: String): (List[String], List[String]) = {
+  private def reformat_file(filename: String): (List[String], List[String]) = {
 
     def get_penn(line: String): String = {
       try { line.split(" ")(1).trim }
