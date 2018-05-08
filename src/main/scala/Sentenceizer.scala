@@ -1,14 +1,26 @@
 package nltk
 
-class Sentenceizer(rawText: String) {
-  private val sentences: Array[String] = rawText.split("\n")
+class Sentenceizer(filename: String) {
 
-  private[this] def validate_sentences(): Array[String] = {
-  	// TODO 
-  	sentences
+  import scala.io.Source
+
+  private val file: Source = Source.fromResource(filename)
+
+  private val rawText: String = file.getLines.mkString
+
+  private val rawSentences: Array[String] = rawText.split(Array('\n', '.', '?', '!'))
+
+  private[this] def validate_sentences(sents: Array[String]): Array[String] = {
+  	  def is_valid_sentence(sent: String): Boolean = {
+  	  	  return (sent.length() > 1)
+  	  }
+
+  	  val v_sents = sents.filter(is_valid_sentence)
+
+  	  return v_sents
   }
 
-  validate_sentences()
+  private val sentences: Array[String] = validate_sentences(rawSentences)
 
   def get_list_of_sentences(): List[String] = sentences.toList
 
