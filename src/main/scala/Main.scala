@@ -15,7 +15,14 @@ object Main extends App {
   // List("I", "would", "like", "a", "red", "coat")
   // String: "I would like a red coat"
 
-  //val input_file = "test-rep.txt"
+  //val rawSentences = {
+  //  import scala.io.Source
+  //  val filename = "test-rep.txt"
+  //  val file: Source = Source.fromResources(filename)
+  //  val rawText: String = file.getLines.mkString
+  //  rawText.split(Array('\n', '.', '?', '!'))
+  //}
+  //
   //val senten = new nltk.Sentenceizer(input_file)
   //val tokens = new nltk.Tokenizer(senten)
   //val tagger = new nltk.POSTagger(tokens)

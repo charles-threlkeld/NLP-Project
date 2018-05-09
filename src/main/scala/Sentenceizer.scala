@@ -1,14 +1,10 @@
 package nltk
 
-class Sentenceizer(filename: String) {
+class Sentenceizer(rawSentences: Array[String]) {
 
-  import scala.io.Source
-
-  private val file: Source = Source.fromResource(filename)
-
-  private val rawText: String = file.getLines.mkString
-
-  private val rawSentences: Array[String] = rawText.split(Array('\n', '.', '?', '!'))
+  // Altered so that we can use this with data structures instead
+  // of filenames. Moved the filename parsing to Main.scala for
+  // testing
 
   private[this] def validate_sentences(sents: Array[String]): Array[String] = {
   	  def is_valid_sentence(sent: String): Boolean = {
