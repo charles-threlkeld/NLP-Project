@@ -28,9 +28,13 @@ object Main extends App {
   //val tagger = new nltk.POSTagger(tokens)
   //tagger.test("test-pos.txt")
 
-  val cp = new nltk.CrestParse()
-  val ttg = new nltk.TrainTestGen()
-  ttg.generate()
-//  val repairable_sentences = cp.find_repairable_utterances()
+  val rep = new nltk.Repair("train.txt")
+  println(rep.base)
+
+  //val cp = new nltk.CrestParse()
+  //val ttg = new nltk.TrainTestGen()
+  //ttg.generate()
+
+  //val repairable_sentences = cp.find_repairable_utterances()
   //for (i <- repairable_sentences) println(i)
 }
