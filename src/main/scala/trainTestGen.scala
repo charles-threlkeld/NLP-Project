@@ -9,7 +9,7 @@ package nltk
 
 // Output files are of the form "repairable utterance";"repaired utterance"\n
 
-class trainTestGen() {
+class TrainTestGen() {
 
   private def get_file(filename: String): List[String] = {
 
@@ -48,9 +48,10 @@ class trainTestGen() {
     for (x <- dataset) {
       val repairable = x._1
       val repaired = x._2
-      writer.write(s"$repairable;$repaired")
+      writer.write(s"$repairable;$repaired\n")
     }
     writer.close()
+    // Note, these files were then hand-moved to the resources folder
   }
 
   private val candidateFile = "repairable-utterances.txt"
