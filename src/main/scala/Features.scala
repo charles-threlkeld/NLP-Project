@@ -55,7 +55,8 @@ object Features {
         val j = repairIndices(0)._2
         val repairTokens = tokens.slice(0, i) ++ tokens.slice(j, tokens.length)
         val utt = repairTokens mkString " "
-        helper(new Sentenceizer(Array(utt)), 1.0)
+        (1.0, new Sentenceizer(Array(utt)))
+        // helper(new Sentenceizer(Array(utt)), 1.0)
       }
     }
     helper(utterance, 0.0)

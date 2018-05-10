@@ -91,12 +91,26 @@ class Repair(filename: String) {
     test_with_dice(repairedTokens, controlTokens)
   }
 
+  type Feature = Sentenceizer => (Double, Sentenceizer)
+
   // This method is where the magic happens
   // Input: utterance: Sentenceizer - our array of disfluent utterances
   // Output: Sentenceizer - the array of repaired utterances0
   def repair(utterance: Sentenceizer): Sentenceizer = {
-    // TODO
-    utterance
+    def select_repair(candidate: Sentenceizer): Sentenceizer = {
+      val repairs = for(f <- Features.featureList) yield f(candidate)
+      repairs.sortBy(_._1).reverse.head._2
+    }
+
+
+    val utterances = utterance.get_list_of_sentences
+    val repairedUtterances = for (u <- utterances) yield {
+      val utteredSentence = new Sentenceizer(Array(u))
+      val repairedSentence = select_repair(utteredSentence)
+      val tokens = new Tokenizer(repairedSentence)
+      tokens.tokens mkString " "
+    }
+    new Sentenceizer(repairedUtterances.toArray)
   }
 
   private val input = get_file(filename)
