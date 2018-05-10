@@ -29,13 +29,14 @@ object Features {
   //         Sentenceizer - the this-feature repaired utterance
   private def f2(utterance: Sentenceizer): (Double, Sentenceizer) = {
     def helper(utterance: Sentenceizer, weight: Double): (Double, Sentenceizer) = {
+      val k = 3
       val tokens = new Tokenizer(utterance).tokens
 
       val repairIndices: List[(Int, Int)] = (for(i <- 0 to tokens.length) yield {
-        val upperBound = if (tokens.length - 1 < i + 4)
+        val upperBound = if (tokens.length - 1 < i + k)
           tokens.length - 1
         else
-          i + 4
+          i + k
         val repairs = (for (j <- i + 1 to upperBound) yield {
           if (tokens(i) == tokens(j))
             (i,j)
