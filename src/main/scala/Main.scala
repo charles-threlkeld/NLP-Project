@@ -30,6 +30,7 @@ object Main extends App {
 
   val rep = new nltk.Repair("train.txt")
   println(rep.base)
+  println(rep.repScore)
 
   //val cp = new nltk.CrestParse()
   //val ttg = new nltk.TrainTestGen()

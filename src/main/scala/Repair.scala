@@ -60,7 +60,6 @@ class Repair(filename: String) {
   // Output: Double: The average Dice score, from which we hope to improve
   private def baseline(input: List[rePair]): Double = {
 
-
     val unrepaired: List[String] = for (i <- input) yield i(0)
     val repaired: List[String] = for (i <- input) yield i(1)
 
@@ -73,19 +72,35 @@ class Repair(filename: String) {
     test_with_dice(unrepairedTokens, repairedTokens)
   }
 
-  def repair(tok: Tokenizer, pos: POSTagger): List[String] = {
-    List("a","b","c")
+  // train uses the features from Feature.featureList to attempt to repair
+  // utterances for disfluencies
+  // Input: None (implicitly the filename with the utterances and hand-repair
+  // Output: Double - the average dice score
+  private def train(): Double = {
+
+    val unrepaired: List[String] = for (i <- input) yield i(0)
+    val unrepairedSentences = new Sentenceizer(unrepaired.toArray)
+    val repairedSentences = repair(unrepairedSentences)
+    val unrepairedTokens = new Tokenizer(unrepairedSentences)
+    val repairedTokens = new Tokenizer(repairedSentences)
+
+    val control = for(i <- input) yield i(1)
+    val controlSentences = new Sentenceizer(control.toArray)
+    val controlTokens = new Tokenizer(controlSentences)
+
+    test_with_dice(repairedTokens, controlTokens)
+  }
+
+  // This method is where the magic happens
+  // Input: utterance: Sentenceizer - our array of disfluent utterances
+  // Output: Sentenceizer - the array of repaired utterances0
+  def repair(utterance: Sentenceizer): Sentenceizer = {
+    // TODO
+    utterance
   }
 
   private val input = get_file(filename)
   val base = baseline(input)
-
-  // import scala.io.Source
-  // val str = Source.fromResource(filename).getLines.toList
-  // val sen = new Sentenceizer(Array("Hello, World!"))
-  // val tok = new Tokenizer(sen)
-  // val pos = new POSTagger(tok)
-  // val rep = repair(tok, pos)
-  // println(filename)
+  val repScore = train()
 
 }
