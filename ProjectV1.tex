@@ -51,26 +51,78 @@ This corpus is broken down into several levels: utterances, token, parts of spee
 
 \end{flushleft}
   
-\section{Remaining Work}
+\begin{flushleft}
+
+After scraping the CReST corpus, we hand-repaired each utterance, we hand-repaired the sentences to remove disfluencies. E.g. ``just - just - can you - can you hold on a second, Brandy?'' was repaired as ``can you hold on a second, Brandy?''. You can see that the repaired version is simply a more fluent version of the semantics of the first. After performing these hand-repairs, we then randomized 70\% (38 utterances) as our training set, and the remaining 17 as a test set.
+  
+\end{flushleft}
 
 \begin{flushleft}
 
-  The CReST corpus has been scraped for the training and testing data, but we still need to parse these into a useable format. First, we need to code each utterance into a syntactically repaired version. E.g. ``I like walked down the hall'' maps to ``I walked down the hall''. Once this is done for the entire set, we will randomly choose a subset for our training set. 30-40 utterances should be sufficient for training, with the remaining 15-25 serving as the testing set at the end of the study.
+  We are splitting our training and testing sets so that the test set provides a distinct data set for assessing the effectiveness of our algorithm. Our features are meant to be linguistically transparent (see below), but we reserve the test set to ensure that we don't overfit to the training set. The purpose of the training set, then, is to ensure that each repair feature that we add to our package is doing repair work. Similary to code tests, the Dice score (again, below) combined with the training set allow us to ensure that our features are both working in the programming sense, and working in the dialog repair sense.
+  
+\end{flushleft}
+
+\begin{flushleft}
+
+  With the data scraped, repaired, and randomized, we built the repair module. Our hypothesis is that we can generate algorithmically generated sentences that are semantically equivalent to the hand-repaired utterances. However, we would need to do further semantic processing in order to verify the semantic content. Instead, we use the syntax as a stand-in for semantics. There is a linguistic debate as to whether this is a reasonable substitution, but this is a first step in a a more full repair.
+  
+\end{flushleft}
+
+\begin{flushleft}
+
+  To that end, we tested our baseline Dice score (see below). For the baseline, we measured the Dice score of the unrepaired utterances to the hand-repaired utterances. This is a baseline because any feature that we add should cumulatively build on this baseline. For our training dataset, the Dice score was ~0.77. We can then write features sequentially, ensuring that each monotonically adds to the Dice score. There is some hazard in this approach that we over-fit the data. However, even though our dataset is small, it is also varied. This was ensured both by the way the data was captured, as a feature of the CReST corpus and the randomization of the utterances for the training data.
 
 \end{flushleft}
 
 \begin{flushleft}
 
-  Once we have training data, we can begin work on the repair features. We anticipate there will be several features such as ``collapse repeated words'' and ``erase simple disfluencies such as 'um'''. The training set will help guide us as we add features to the algorithm. Once we are satisfied with the score of the testing set, we can then, only once, test our algorithm on the testing set. Given that our data is especially precious, we cannot allow our training and testing sets to intermingle or we will reduce the generalizability of our project. In fact, since we are coding the repaired sentences by hand, we may be reducing generalizability already. However, given our limited resources, this is a compromise that we will make.
-
+  With proper data and a testing method in place, we built the actual crux of the project: the repair mechanisms. First, in the repair module, we created a train method that would output the Dice score of repair done on the training set. Next, we built a series of features in the Feature module. Linguistically, disfluencies are not random. And so, each feature represents one specific type of disfluency that people exhibit. For example, one feature handles two-token utterances like ``yeah okay''. In this case, the disfluency is a simple repetition of the same sentiment. The repair would entail dropping one token or the other. Semantically, the words should have the same content, and so as part of a semantic parser, we would have some leniency as to which token we choose for the utterance. In our feature, we chose the second token, with the thinking that if a second token wasn't a clarification of the first, then it would be unnecessary.
+  
 \end{flushleft}
 
 \begin{flushleft}
 
-  In the future, it would be ideal to obtain a larger dataset that is then hand-repaired by several, independent humans, in a way blind to the feature creators. Then, when split into training and test data, we could ensure that the problematic nature of our current system does not enter into the decisions made in creating the repair features.
+  At the beginning of the project, the idea was have a process for choosing the most-likely sentence-repair chosen from a selection of possible sentences. The algorithm would have mapped very closely from the part-of-speech tagger from class. However, this approach would not work with linguistic repair features. First, we would need a much larger dataset. Generally, when doing machine learning of this type, a few thousand data points are necessary. Given the richness of natural language, this problem domain may need a few more orders of magnitude to train a meaningful algorithm.
 
 \end{flushleft}
-    
+
+\begin{flushleft}
+  
+  Second, the features included in such an algorithm are unclear. Using our method, we can trace a direct line from linguistic theory to feature in our set. Word repetition (see above) is one standard disfluency marker with a clear repair. Extraneous utterances, such as ``like'' or ``um'' are also easily handled with our approach.
+  
+\end{flushleft}
+
+\begin{flushleft}
+  
+  Third, our approach allows for several disfluencies to be disentangled and repaired. For example, if an utterance is ``I want like some um chicken for dinner,'' mapping to ``I want chicken for dinner'' is straighforward using standard linguistic markers. In a traditionally trained algorithm, the ``like'' is ambiguous. Does the person want something similar to chicken or actual chicken? Similarly, the sentence ``I want some dinner'' is equally fluent as the candidate above, but loses the semantic content of the chicken. By adhering to more transparent linguistic formulae, we avoid throwing away semantically important information.
+
+\end{flushleft}
+
+\section{Further Work}
+
+\begin{flushleft}
+
+  As outlined above, our method of repair is linguistically transparent. Therefore, a good deal of work can be done by adding features to the Features module and to Features.featureList. These features represent the types of disfluencies that our algorithm currently handles, and so any additional features will be an asset to this library.
+  
+\end{flushleft}
+
+\begin{flushleft}
+
+  As an example of unimplemented features (due to time contraints), is one that leverages self-repair markers and our part-of-speech tagger in order to parse self-correction. E.g. ``Pass me the blue book, I mean the red book'' repairs to ``Pass me the red book''. This relies on identifying the self-correction marker ``I mean'', and recognizing by part-of-speech similarity that the object ``red book'' should replace the original ``blue book'' and the repair phrase can be dropped in the final semantics.
+  
+\end{flushleft}
+
+\begin{flushleft}
+
+  Another example that would require more extention, would be to include stemming in our package. Without a stemmer, correction of tense or plurality does not take place. So ``Hand me the book - books'' goes unrepaired, as ``book'' and ``books'' are not recognized as the same token.
+  
+\begin{flushleft}
+
+  Our algorithm could also be recursive, such that repair candidates themselves are then repaired until the repair and repair-candidate are equivalent. This would allow us to cover cases where there are multiple disfluencies in a single utterance, which is another benefit of using the transparently linguistically-derived features.
+  
+\end{flushleft}
+
 \section{Evaluation}
 
 \begin{flushleft}
@@ -85,12 +137,16 @@ This corpus is broken down into several levels: utterances, token, parts of spee
   
 \end{flushleft}
 
+\begin{flushleft}
+
+  We began with a baseline Dice score of ~0.77 on our training set. After implementing our features, we achieved a Dice score of TODO with our training set. In our test set, our baseline Dice score was TODO, and the score when using our repair featureset was TODO.
+
 \section{Materials}
 \subsection{Data List}
 
 \begin{flushleft}
 
-We anticipate needing at least a few dozen sentences of dialog that has been recognized as exhibiting first-person repair. The larger our corpus, the more general we can make our algorithm, but since this type of repair happens almost exclusively in spoken dialog, and not prepared speech or written text, we will have to find a corpus of transcribed natural dialog.
+We used a fifty-five utterances of dialog recognized as exhibiting disfluency. The larger our corpus, the more general we can make our algorithm, but since this type of repair happens almost exclusively in spoken dialog, and not prepared speech or written text, we were limited to a spoken corpus of natural dialog. If we were able to find a larger dataset, we could test new linguistic features of repair.
 
 \end{flushleft}
 
