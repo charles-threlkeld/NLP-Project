@@ -29,12 +29,12 @@ object Main extends App {
   //tagger.test("test-pos.txt")
 
   val rep = new nltk.Repair("train.txt")
-  println(rep.base)
-  println(rep.repScore)
+  println("Baseline Dice Score for Training Set: " + rep.base)
+  println("Training Set Dice Score after Repair: " + rep.repScore)
 
   val rep_test = new nltk.Repair("test.txt")
-  println(rep_test.base)
-  println(rep_test.repScore)
+  println("Baseline Dice Score for Testing Set: " + rep_test.base)
+  println("Testing Set Dice Score after Repair: " + rep_test.repScore)
 
   //val cp = new nltk.CrestParse()
   //val ttg = new nltk.TrainTestGen()

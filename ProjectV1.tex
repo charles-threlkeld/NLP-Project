@@ -2,7 +2,7 @@
 
 \title{Computational First Position Repair Processing}
 \author{Charles Threlkeld and Alexandru Ungureanu}
-\date{3 April 2018}
+\date{\today}
 \begin{document}
 \maketitle
 
@@ -117,6 +117,8 @@ After scraping the CReST corpus, we hand-repaired each utterance, we hand-repair
 
   Another example that would require more extention, would be to include stemming in our package. Without a stemmer, correction of tense or plurality does not take place. So ``Hand me the book - books'' goes unrepaired, as ``book'' and ``books'' are not recognized as the same token.
   
+  \end{flushleft}
+  
 \begin{flushleft}
 
   Our algorithm could also be recursive, such that repair candidates themselves are then repaired until the repair and repair-candidate are equivalent. This would allow us to cover cases where there are multiple disfluencies in a single utterance, which is another benefit of using the transparently linguistically-derived features.
@@ -139,7 +141,10 @@ After scraping the CReST corpus, we hand-repaired each utterance, we hand-repair
 
 \begin{flushleft}
 
-  We began with a baseline Dice score of ~0.77 on our training set. After implementing our features, we achieved a Dice score of TODO with our training set. In our test set, our baseline Dice score was TODO, and the score when using our repair featureset was TODO.
+We began with a baseline Dice score of ~0.77 on our training set. After implementing our features, we achieved a Dice score of ~0.82 with our training set. In our test set, our baseline Dice score was 0.85, and the score when using our repair feature set was 0.88.
+
+\end{flushleft}  
+
 
 \section{Materials}
 \subsection{Data List}
