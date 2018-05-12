@@ -32,7 +32,7 @@ object Features {
       val k = 3
       val tokens = new Tokenizer(utterance).tokens
 
-      val repairIndices: List[(Int, Int)] = (for(i <- 0 to tokens.length) yield {
+      val repairIndices: List[(Int, Int)] = (for(i <- 0 to tokens.length - 1) yield {
         val upperBound = if (tokens.length - 1 < i + k)
           tokens.length - 1
         else
@@ -46,8 +46,8 @@ object Features {
         if (repairs.isEmpty)
           null
         else
-          (-1,-1)
-      }).toList.filter(_ != null)
+          repairs
+      }).filter(_ != null).flatten.toList
 
       if (repairIndices.isEmpty)
         (weight, utterance)
